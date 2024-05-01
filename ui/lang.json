@@ -1,0 +1,12 @@
+{
+    "titulo": {
+        "es": "Título",
+        "en": "Title",
+        "fr": "Titre"
+    },
+    "bienvenida": {
+        "es": "Bienvenido",
+        "en": "Welcome",
+        "fr": "Bienvenue"
+    }
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>mono_conce</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="admin.css">
+    <script src="admin.js"></script>
+    <script src="https://kit.fontawesome.com/34677818f4.js" crossorigin="anonymous"></script>
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+    <div class="move"></div>
+    <div class="container-conce ">
+        
+        <div class="head">
+            <div class="titulo" id='titulo'>Premium Deluxe MotorSport</div>
+            <div class="cerrar"><i class="fa-solid fa-xmark"></i></div>
+        </div>
+
+
+        <div class="container-categoria">
+            <div class="izquierda-categoria"><i class="fa-solid fa-arrow-left"></i></div>
+            <div class="actual-cat "><span id="categoria">Sedanes</span></div>
+            <div class="derecha-categoria"><i class="fa-solid fa-arrow-right"></i></div>
+
+        </div>
+        <div class="container-vehiculo">
+            <div class="content-load" id="content-load"></div>
+            <div class="titulo-carta">Información del vehículo</div>
+            <div class="carta-info-veh">
+                <div class="modelo-carta">Marca <span id="marca">Karin</span></div>
+                <div class="modelo-carta">Modelo <span id="modelo">Karin Sultan</span></div>
+                <div class="categ-carta">Categoría <span id="categoria">Sedan</span></div>
+                <div class="asientos-carta">Asientos <span id="asientos">3</span></div>
+                <div class="velmax-carta">Vel. Max estimada <span id="velocidad">140 km</span></div>
+                <div class="precio-carta">Precio <span id="precio">1000$</span></div>
+            </div>
+        </div>
+
+        <div class="container-cambiar">
+            <div class="botones">
+                <div class="izquierda-cambiar"><i class="fa-solid fa-arrow-left"></i></div>
+                <div class="comprar"><span id="accion"><i class="fa-solid fa-cart-shopping"></i></span></div>
+                <div class="derecha-cambiar"><i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+            <div class="colores">
+                <div class="color1 "></i> <input type="color" id="color1">
+                </div>
+                <div class="color2 "></i> <input type="color" id="color2">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-admin">
+
+        <div class="admin-menu">
+            <div class="boton-categorias">Categorias</div>
+            <div class="boton-vehiculos">Vehículos</div>
+            <div class="boton-cerrar"><i class="fa-solid fa-xmark"></i></div>
+        </div>
+
+        <div class="admin-content">
+
+            <div class="content-categorias">
+                <div class="nuevacategoria">
+                    <div class="new-cat">Nueva categoria</div>
+                    <div class="label-cat-new"><input type="text" placeholder="Label"></div>
+                    <div class="name-cat-new"><input type="text" placeholder="Nombre"></div>
+                    <div class="crear-cat"><i class="fa-solid fa-plus"></i></div>
+                </div>
+                <div class="container-carta-categoria">
+                    <div class="carta-categoria">
+                        <div class="label-cat">Label <span id="label-cat">ULTIMO</div>
+                        <div class="name-cat">ID <span id="name-cat">ULTIMO</span></div>
+                        <div class="delete-cat"><i class="fa-solid fa-trash-can"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-load">
+                <div class="loading"></div>
+            </div>
+            <div class="content-vehiculos">
+                <div class="nuevovehiculo">
+                    <div class="new-veh">Agregar vehículo</div>
+
+                    <div class="vehiculo-grid">
+                        <div class="label-veh-new"><input type="text" placeholder="Label"></div>
+                        <div class="name-veh-new"><input type="text" placeholder="Modelo"></div>
+                        <div class="price-veh-new"><input type="number" placeholder="Precio"></div>
+                        <div class="cate-veh-new">
+                            <select id="cars">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="crear-veh"><i class="fa-solid fa-plus"></i></div>
+                </div>
+
+                <div class="buscador-vehiculos">
+                    <input type="search" id="search" placeholder="Buscar vehículo" class="dark">
+                </div>
+
+                <div class="container-carta-vehiculo">
+                    <!--div class="carta-vehiculo">
+                        <div class="sepe-carta-veh">
+                            <div class="label-veh">Label <span id="label-veh">Adder</span></div>
+                            <div class="name-veh">Model <span id="name-veh">adder</span></div>
+                        </div>
+                        <div class="sepe-carta-veh">
+                            <div class="price-lab-veh">Precio <span id="price-lab-veh">1000 $</span></div>
+                            <div class="catego-lab-veh">Categoria <span id="catego-lab-veh">supersports</span></div>
+                        </div>
+                        <div class="sepe-carta-veh">
+                            <div class="price-veh-input"><input type="number" name="" id=""></div>
+                            <div class="price-veh-option"><select name="categorias" id="catego">
+                                    <option value="" disabled selected hidden>Nueva categoria</option>
+                                    <option value="" disabled selected hidden>Nueva categoria</option>
+                                    <option value="" disabled selected hidden>Nueva categoria</option>
+                                </select></div>
+                        </div>
+                        <div class="sepe-carta-veh">
+                            <div class="delete-veh"><i class="fa-solid fa-trash-can"></i> Eliminar</div>
+                            <div class="update-veh"><i class="fa-solid fa-save"></i> Guardar</div>
+                            <div class="spawn-veh"><i class="fa-solid fa-car-on"></i>Spawn</div>
+                        </div>
+                    </div-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>

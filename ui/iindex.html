@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato';
+            padding: 5px;
+
+        }
+
+        details {
+            position: relative;
+            width: 300px;
+        }
+
+        details[open] {
+            z-index: 1;
+        }
+
+        summary {
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+            background-color: #222222;
+            color: #ccc;
+            list-style: none;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+            background-color: #4e4e4e;
+        }
+
+        details[open] summary:before {
+            content: '';
+            display: block;
+            width: 100vw;
+            height: 100vh;
+            background: transparent;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        summary:after {
+            content: '';
+            display: inline-block;
+            float: right;
+            margin-right: 5px;
+            width: 10px;
+            height: 10px;
+            border-bottom: 2px solid currentColor;
+            border-left: 2px solid currentColor;
+            border-bottom-left-radius: 4px;
+            transform: rotate(45deg) translate(40%, 0%);
+            transform-origin: center center;
+            transition: transform ease-in-out 100ms;
+        }
+
+        summary:focus {
+            outline: none;
+        }
+
+        details[open] summary:after {
+            transform: rotate(-45deg) translate(0%, 0%);
+        }
+
+        ul {
+            width: 100%;
+            background: #222222;
+            position: absolute;
+            color: #ccc;
+            padding: 1rem;
+            text-align: center;
+            list-style-type: none;
+            margin: 0;
+            box-sizing: border-box;
+            border-radius: 10px;
+            height: 200px;
+            overflow-y: auto;
+            padding: 10px;
+            margin-top: 5px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
+
+        li {
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 5px;
+        }
+
+        li:hover {
+            background-color: #4e4e4e;
+        }
+
+        li:last-child {
+            padding-bottom: 5px;
+        }
+
+        summary.radios {
+            counter-reset: radios;
+        }
+
+        summary.radios:before {
+            content: var(--selection);
+        }
+
+        input[type=radio] {
+            counter-increment: radios;
+            appearance: none;
+            display: none;
+            color: #ccc;
+        }
+
+        input[type=radio]:checked {
+            display: inline;
+            --display: block;
+        }
+
+        input[type=radio]:after {
+            content: attr(title);
+            display: inline;
+            font-size: 1rem;
+        }
+
+        ul.list {
+            counter-reset: labels;
+        }
+
+        label {
+            width: 100%;
+            display: flex;
+            cursor: pointer;
+            justify-content: space-between;
+            align-items: center;
+            /* Agregado para centrar verticalmente */
+        }
+
+        label span {
+            --display: none;
+            display: var(--display);
+            width: 1rem;
+            height: 1rem;
+            border: 1px solid #727272;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <script>
+        function createCustomSelectHTML(options) {
+            const details = document.createElement('details');
+            details.className = 'custom-select';
+
+            const summary = document.createElement('summary');
+            summary.className = 'radios';
+
+            options.forEach((option, index) => {
+                const input = document.createElement('input');
+                input.type = 'radio';
+                input.name = 'item';
+                input.id = option.id;
+                input.title = option.title;
+                input.checked = true;
+                summary.appendChild(input);
+
+                if (index === 0) {
+                    input.checked = true;
+                }
+            });
+
+            details.appendChild(summary);
+
+            const ul = document.createElement('ul');
+            ul.className = 'list';
+
+            options.forEach(option => {
+                const li = document.createElement('li');
+                const label = document.createElement('label');
+                label.setAttribute('for', option.id);
+                label.textContent = option.title;
+
+                const span = document.createElement('span');
+                label.appendChild(span);
+                li.appendChild(label);
+                ul.appendChild(li);
+            });
+
+            details.appendChild(ul);
+
+            details.setAttribute('open', true);
+
+            return details.outerHTML;
+        }
+
+        const optionsList = [
+            { id: 'item1', title: 'Item 1' },
+            { id: 'item2', title: 'Item 2' },
+            { id: 'item3', title: 'Item 3' },
+            { id: 'item4', title: 'Item 4' },
+            { id: 'item5', title: 'Item 5' },
+        ];
+
+        const container = document.getElementById('container');
+
+        container.innerHTML += createCustomSelectHTML(optionsList);
+    </script>
+</body>
+
+</html>
